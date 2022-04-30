@@ -35,7 +35,6 @@ class App extends Component {
 
   handleEditChange = (e, index) => {
     const task = this.state.tasks[index];
-    console.log(task)
     const newTask = Object.assign(task, { text: e.target.value });
     const tasks = this.state.tasks.map((task, taskIndex) => {
       if (index !== taskIndex) return task;
@@ -46,6 +45,7 @@ class App extends Component {
 
   onSubmitTask = (e) => {
     e.preventDefault();
+    if (this.state.task.text === '') return;
     this.setState({
       tasks: this.state.tasks.concat(this.state.task),
       task: {
@@ -84,7 +84,7 @@ class App extends Component {
 
     return (
       <main className="App">
-        <form onSubmit={this.onSubmitTask}>
+        <form className="main-form" onSubmit={this.onSubmitTask}>
           <label htmlFor="taskInput">Enter task</label>
           <input
             onChange={this.handleChange}

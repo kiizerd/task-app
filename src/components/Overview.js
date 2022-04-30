@@ -12,24 +12,28 @@ const Overview = (props) => {
     editTask
   } = props;
   
-  const listItem = (task, index) => {
+  const taskItem = (task, index) => {
     return (
-      <li key={task.id}>
-        <span>              
-          <strong>{task.num+1} </strong>
+      <div>
+        <span>
+          <strong>{task.num+1}. - </strong>
           <span>{task.text}</span>
         </span>
-        <span>              
-          <FontAwesomeIcon onClick={(e) => editTask(index)} icon={faPencil} />
-          <FontAwesomeIcon onClick={(e) => removeTask(index)} icon={faTrashCan} />
+        <span className="icon-span">
+          <i>
+            <FontAwesomeIcon onClick={(e) => editTask(index)} icon={faPencil} />
+          </i> 
+          <i>
+            <FontAwesomeIcon onClick={(e) => removeTask(index)} icon={faTrashCan} />
+          </i> 
         </span>
-      </li>
+      </div>
     );
-  }
+  };
 
   const inputItem = (task, index) => {
     return (
-      <form key={task.id} onSubmit={(e) => { onResubmitTask(e, index) }}>
+      <form onSubmit={(e) => { onResubmitTask(e, index) }}>
         <input 
           onChange={(e) => { handleEditChange(e, index) }}
           type='text'
@@ -43,8 +47,10 @@ const Overview = (props) => {
   return(
     <ul>
       {tasks.map((task, index) => {
-        if (task.isBeingEdited) return inputItem(task, index);
-        return listItem(task, index);
+        return (
+          <li key={task.id}>
+            {task.isBeingEdited ? inputItem(task, index) : taskItem(task, index)}
+          </li>);
       })}
     </ul>
   );
