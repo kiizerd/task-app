@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   background-color: rosybrown;
+  text-align: center;
 }
 
 code {
@@ -45,9 +45,14 @@ ul > * {
   margin: 8px 2px;
 }
 
-li > * {
+.Task > * {
   display: flex;
   justify-content: space-between;
+}
+
+.Task > form {
+  /* Prevent form appearance from moving other elements in list */
+  margin: 10px 0 13px 0;
 }
 
 .icon-span {
