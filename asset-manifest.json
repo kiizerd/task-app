@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/://kiizerd.github.io/task-app/static/css/main.d8e26612.css",
+    "main.js": "/://kiizerd.github.io/task-app/static/js/main.872ffc42.js",
+    "index.html": "/://kiizerd.github.io/task-app/index.html",
+    "main.d8e26612.css.map": "/://kiizerd.github.io/task-app/static/css/main.d8e26612.css.map",
+    "main.872ffc42.js.map": "/://kiizerd.github.io/task-app/static/js/main.872ffc42.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8e26612.css",
+    "static/js/main.872ffc42.js"
+  ]
+}
